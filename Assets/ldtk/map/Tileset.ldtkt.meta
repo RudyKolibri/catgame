@@ -52,7 +52,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 6d8d4e7ca3a06ea4bb949029d43a2749
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
+      - {x: 8, y: 8}
     tessellationDetail: 0
   - name: Tileset_3
     originalName: 
@@ -237,4 +242,4 @@ ScriptedImporter:
     spriteOutline: []
     tessellationDetail: 0
   _secondaryTextures: []
-  _artifacts: {instanceID: 0}
+  _artifacts: {fileID: -2988177865379244337, guid: 7e1a95c491cd2374e95752844d6ca35b, type: 3}
