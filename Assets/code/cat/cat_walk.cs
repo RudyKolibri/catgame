@@ -1,4 +1,5 @@
 using LDtkUnity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,6 +10,7 @@ public class cat_walk : MonoBehaviour
     LDtkFields data;
     int index = 0;
     public bool walking = false;
+    LineRenderer line;
     public LDtkReferenceToAnEntityInstance[] test;
     public Vector2[] path;
     Transform cat;
@@ -18,6 +20,15 @@ public class cat_walk : MonoBehaviour
         path = data.GetPointArray("path");
         test = data.GetEntityReferenceArray("othercats");
         transform.position = path[0];
+        line = GetComponent<LineRenderer>();
+        line.positionCount = path.Length;
+        line.SetColors(new Color(0,1,0,0.1f), new Color(0, 1, 0, 0.1f));
+        line.startWidth = 0.2f;
+        line.endWidth = 0.2f;
+        for (int index = 0; index <= (path.Length-1); index++)
+        {
+            line.SetPosition(index,new Vector3(path[index].x, path[index].y,-1));
+        }
     }
     public void start_movement() // will be called by a play button
     {
@@ -29,15 +40,27 @@ public class cat_walk : MonoBehaviour
         if (walking != false)
         {
             index += 1;
-            transform.position = path[index];
-
-            if (index == path.Length - 1)
+            gameObject.layer = 2;
+            RaycastHit2D ray = Physics2D.Raycast(transform.position, path[index]- new Vector2(transform.position.x,transform.position.y),1f);
+            if (ray.collider == null )
             {
-                Invoke("finish", 0.5f);
+                gameObject.layer = 0;
+                transform.position = path[index];
+
+                if (index == path.Length - 1)
+                {
+                    Invoke("finish", 0.5f);
+                }
+                else
+                {
+                    Invoke("step", 1f);
+                }
             }
             else
             {
-                Invoke("step", 1f);
+                gameObject.layer = 0;
+                Debug.Log(ray.collider);
+                fail();
             }
         }
 
@@ -54,10 +77,6 @@ public class cat_walk : MonoBehaviour
             RaycastHit2D ray2 = Physics2D.Raycast(transform.position, new Vector3(-20, 0));
             RaycastHit2D ray3 = Physics2D.Raycast(transform.position, new Vector3(0, 20, 0));
             RaycastHit2D ray4 = Physics2D.Raycast(transform.position, new Vector3(0,-20, 0));
-            Debug.DrawRay(transform.position,  new Vector3(20,0));
-            Debug.DrawRay(transform.position, new Vector3(-20, 0));
-            Debug.DrawRay(transform.position, new Vector3(0,20));
-            Debug.DrawRay(transform.position, new Vector3(0,-20));
             if (ray1.collider != null)
             {
                 

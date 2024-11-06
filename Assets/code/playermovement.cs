@@ -18,6 +18,8 @@ public class playermovement : MonoBehaviour
                 i.fail();
                 i.start_movement();
             }
+            
+            Debug.Log("start");
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
