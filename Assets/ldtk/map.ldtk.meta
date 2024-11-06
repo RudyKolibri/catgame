@@ -13,7 +13,7 @@ ScriptedImporter:
   _pixelsPerUnit: 16
   _customLevelPrefab: {instanceID: 0}
   _intGridValueColorsVisible: 0
-  _useCompositeCollider: 1
+  _useCompositeCollider: 0
   _geometryType: 1
   _createBackgroundColor: 1
   _createLevelBoundsTrigger: 0
@@ -21,9 +21,11 @@ ScriptedImporter:
   _intGridValues: []
   _entities:
   - _key: Box
-    _asset: {instanceID: 0}
+    _asset: {fileID: 8887337135552913928, guid: ff3125d5b14d2f2459a89aa1c08d2fee, type: 3}
   - _key: Cat
     _asset: {fileID: 1421600105919299211, guid: ee9db59c4b1e19743a4582341ba9ea8f, type: 3}
+  - _key: Player
+    _asset: {fileID: 6944984602186679334, guid: a8bd18e9cf00a9649b65d91b5a7f169c, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

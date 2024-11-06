@@ -17,7 +17,6 @@ public class cat_walk : MonoBehaviour
         data = GetComponent<LDtkFields>();
         path = data.GetPointArray("path");
         test = data.GetEntityReferenceArray("othercats");
-        start_movement();
         transform.position = path[0];
     }
     public void start_movement() // will be called by a play button
@@ -102,19 +101,18 @@ public class cat_walk : MonoBehaviour
             gameObject.layer = 0;
         }
     }
-    private void fail()
+    public void fail()
     {
         Debug.Log("fail");
+        
         transform.position = path[0];
         walking = false;
         index = 0;
     }
     public void catstay(Collider2D collision)
     {
-        Debug.Log(collision);
         if (collision.tag == "cat")
         {
-            Debug.Log(collision);
             gameObject.layer = 2;
             RaycastHit2D ray = Physics2D.Raycast(transform.position, collision.gameObject.transform.position - transform.position);
             Debug.DrawRay(transform.position, collision.transform.position - transform.position);
