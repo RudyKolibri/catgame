@@ -50,27 +50,83 @@ public class cat_walk : MonoBehaviour
     private void FixedUpdate()
     {
         foreach (LDtkReferenceToAnEntityInstance i in test) {
-            GetComponent<CircleCollider2D>().enabled = false;
-            RaycastHit2D ray = Physics2D.Raycast(transform.position, i.FindEntity().transform.position- transform.position);
-            Debug.DrawRay(transform.position, i.FindEntity().transform.position - transform.position);
-            if (ray.collider != null)
+            gameObject.layer = 2;
+            RaycastHit2D ray1 = Physics2D.Raycast(transform.position, new Vector3(20, 0));
+            RaycastHit2D ray2 = Physics2D.Raycast(transform.position, new Vector3(-20, 0));
+            RaycastHit2D ray3 = Physics2D.Raycast(transform.position, new Vector3(0, 20, 0));
+            RaycastHit2D ray4 = Physics2D.Raycast(transform.position, new Vector3(0,-20, 0));
+            Debug.DrawRay(transform.position,  new Vector3(20,0));
+            Debug.DrawRay(transform.position, new Vector3(-20, 0));
+            Debug.DrawRay(transform.position, new Vector3(0,20));
+            Debug.DrawRay(transform.position, new Vector3(0,-20));
+            if (ray1.collider != null)
             {
                 
                 
-                if (ray.collider.tag == "cat")
+                if (ray1.collider.tag == "cat")
                 {
-                    Debug.Log(ray.collider);
                     walking = false;
-                    Invoke("fail", 0.1f);
+                    Invoke("fail", 2f);
+                }
+            }            
+            if (ray2.collider != null)
+            {
+                
+                
+                if (ray2.collider.tag == "cat")
+                {
+                    walking = false;
+                    Invoke("fail", 2f);
+                }
+            }            
+            if (ray3.collider != null)
+            {
+                
+                
+                if (ray3.collider.tag == "cat")
+                {
+                    walking = false;
+                    Invoke("fail", 2f);
+                }
+            }            
+            if (ray4.collider != null)
+            {
+                
+                
+                if (ray4.collider.tag == "cat")
+                {
+                    walking = false;
+                    Invoke("fail", 2f);
                 }
             }
-            GetComponent<CircleCollider2D>().enabled = true;
+            gameObject.layer = 0;
         }
     }
     private void fail()
     {
+        Debug.Log("fail");
         transform.position = path[0];
         walking = false;
         index = 0;
+    }
+    public void catstay(Collider2D collision)
+    {
+        Debug.Log(collision);
+        if (collision.tag == "cat")
+        {
+            Debug.Log(collision);
+            gameObject.layer = 2;
+            RaycastHit2D ray = Physics2D.Raycast(transform.position, collision.gameObject.transform.position - transform.position);
+            Debug.DrawRay(transform.position, collision.transform.position - transform.position);
+            if (ray.collider != null)
+            {
+                if (ray.collider.tag == "cat")
+                {
+                    walking = false;
+                    Invoke("fail", 2f);
+                }
+            }
+            gameObject.layer = 0;
+        }
     }
 }
