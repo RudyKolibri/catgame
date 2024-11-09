@@ -30,6 +30,14 @@ public class cat_walk : MonoBehaviour
             line.SetPosition(index,new Vector3(path[index].x, path[index].y,-1));
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            fail();
+            start_movement();
+        }
+
+    }
     public void start_movement() // will be called by a play button
     {
         walking= true;
@@ -41,29 +49,46 @@ public class cat_walk : MonoBehaviour
         {
             index += 1;
             gameObject.layer = 2;
-            RaycastHit2D ray = Physics2D.Raycast(transform.position, path[index]- new Vector2(transform.position.x,transform.position.y),1f);
-            if (ray.collider == null )
+            if (index < path.Length)
             {
-                gameObject.layer = 0;
-                transform.position = path[index];
-
-                if (index == path.Length - 1)
+                Debug.Log(index);
+                RaycastHit2D ray = Physics2D.Raycast(transform.position, path[index] - (Vector2)transform.position, 1f);
+                
+                Debug.Log(path[index] - (Vector2)transform.position);
+                if (ray.collider != null)
                 {
-                    Invoke("finish", 0.5f);
+                    Debug.Log(ray.collider);
+                    if (ray.collider.tag == "box")
+                    {
+                        ray.collider.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                        RaycastHit2D ray2 = Physics2D.Raycast(ray.collider.transform.position, path[index] - (Vector2)transform.position, 1f);
+
+                        if (ray2.collider != null)
+                        {
+                            Debug.Log(ray2.collider);
+                            fail();
+                        }
+                        else
+                        {
+                            ray.collider.transform.position += ((Vector3)path[index] - (Vector3)transform.position);
+                            transform.position += ((Vector3)path[index] - (Vector3)transform.position);
+                            Invoke("step", 0.5f);
+                        }
+                        ray.collider.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    }
+
                 }
                 else
                 {
-                    Invoke("step", 1f);
+                    transform.position += ((Vector3)path[index] - (Vector3)transform.position);
+                    Invoke("step", 0.5f);
                 }
             }
             else
             {
-                gameObject.layer = 0;
-                Debug.Log(ray.collider);
-                fail();
+                finish();
             }
         }
-
     }
     public void finish()
     {
@@ -134,7 +159,6 @@ public class cat_walk : MonoBehaviour
         {
             gameObject.layer = 2;
             RaycastHit2D ray = Physics2D.Raycast(transform.position, collision.gameObject.transform.position - transform.position);
-            Debug.DrawRay(transform.position, collision.transform.position - transform.position);
             if (ray.collider != null)
             {
                 if (ray.collider.tag == "cat")
