@@ -4,18 +4,25 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Linq;
 
 public class cat_walk : MonoBehaviour
 {
     LDtkFields data;
+    gamehandler handler;
     int index = 0;
+    bool drawing = false;
     public bool walking = false;
     LineRenderer line;
     public LDtkReferenceToAnEntityInstance[] test;
     public Vector2[] path;
+    private Camera _mainCamera;
+    public Vector2[] newpath;
     Transform cat;
     private void Start()
     {
+        handler = FindObjectOfType<gamehandler>();
+        _mainCamera = Camera.main;
         data = GetComponent<LDtkFields>();
         path = data.GetPointArray("path");
         test = data.GetEntityReferenceArray("othercats");
@@ -32,15 +39,15 @@ public class cat_walk : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            fail();
-            start_movement();
+        if (drawing)
+        {
+            drawing_path();
         }
-
     }
     public void start_movement() // will be called by a play button
     {
         walking= true;
+        Debug.Log("start");
         Invoke("step", 0.5f);
     }
     public void step()
@@ -147,8 +154,7 @@ public class cat_walk : MonoBehaviour
     }
     public void fail()
     {
-        Debug.Log("fail");
-        
+        Debug.Log(gameObject);
         transform.position = path[0];
         walking = false;
         index = 0;
@@ -169,5 +175,54 @@ public class cat_walk : MonoBehaviour
             }
             gameObject.layer = 0;
         }
+    }
+    public void new_path()
+    {
+        drawing = true;
+        Vector2[] newpath = { } ;
+        
+        index = 0;
+    }
+    public void drawing_path() {
+        transform.position = path[0];
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 position = ( _mainCamera.ScreenToWorldPoint( Input.mousePosition) / 16 )* 16;
+            Array.Resize(ref newpath, newpath.Length + 1);
+            newpath[index] = new Vector2 (Mathf.Round(position.x + 0.5f)-0.5f, MathF.Round( position.y+0.5f)-0.5f); //fixen
+            Debug.Log(newpath.Length);
+            index ++;
+
+            line = GetComponent<LineRenderer>();
+            line.positionCount = newpath.Length;
+            line.SetColors(new Color(0, 1, 0, 0.1f), new Color(0, 1, 0, 0.1f));
+            line.startWidth = 0.2f;
+            line.endWidth = 0.2f;
+            for (int index = 0; index <= (newpath.Length - 1); index++)
+            {
+                line.SetPosition(index, new Vector3(newpath[index].x, newpath[index].y, -1));
+            }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log(newpath);
+            if (newpath.Length > 0)
+            {
+                path = newpath;
+            }
+            newpath = new Vector2[] { };
+            drawing = false;
+            line = GetComponent<LineRenderer>();
+            line.positionCount = path.Length;
+            line.SetColors(new Color(0, 1, 0, 0.1f), new Color(0, 1, 0, 0.1f));
+            line.startWidth = 0.2f;
+            line.endWidth = 0.2f;
+            for (int index = 0; index <= (path.Length - 1); index++)
+            {
+                line.SetPosition(index, new Vector3(path[index].x, path[index].y, -1));
+            }
+        }
+        
     }
 }
