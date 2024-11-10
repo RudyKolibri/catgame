@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class gamehandler : MonoBehaviour
 {
     cat_walk[] cats;
     goal[] goals;
+    box[] boxs; 
     int amount_done = 0;
     void Start()
     {
         cats = FindObjectsOfType<cat_walk>();
         goals = FindObjectsOfType<goal>();
+       boxs = FindObjectsOfType<box>();
     }
     private void Update()
     {
@@ -23,7 +26,22 @@ public class gamehandler : MonoBehaviour
                 c.start_movement();
 
             }
+            foreach (box b in boxs)
+            {
+                b.respawn();
+            }
             
+        }
+    }
+    public void restart()
+    {
+        foreach (cat_walk c in cats)
+        {
+            c.fail();
+        }
+        foreach (box b in boxs)
+        {
+            b.respawn();
         }
     }
     public void cat_done()
@@ -47,6 +65,10 @@ public class gamehandler : MonoBehaviour
                 foreach(cat_walk c in cats)
                 {
                     c.fail();
+                }
+                foreach(box b in boxs)
+                {
+                    b.respawn();
                 }
             }
         }

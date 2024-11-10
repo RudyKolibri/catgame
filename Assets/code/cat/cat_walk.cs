@@ -21,12 +21,12 @@ public class cat_walk : MonoBehaviour
     Transform cat;
     private void Start()
     {
+        
         handler = FindObjectOfType<gamehandler>();
         _mainCamera = Camera.main;
         data = GetComponent<LDtkFields>();
-        path = data.GetPointArray("path");
+        path = new Vector2[] { new Vector2(transform.position.x, transform.position.y) };
         test = data.GetEntityReferenceArray("othercats");
-        transform.position = path[0];
         line = GetComponent<LineRenderer>();
         line.positionCount = path.Length;
         line.SetColors(new Color(0,1,0,0.1f), new Color(0, 1, 0, 0.1f));
@@ -37,6 +37,7 @@ public class cat_walk : MonoBehaviour
             line.SetPosition(index,new Vector3(path[index].x, path[index].y,-1));
         }
     }
+
     private void Update()
     {
         if (drawing)
@@ -117,7 +118,8 @@ public class cat_walk : MonoBehaviour
                 if (ray1.collider.tag == "cat")
                 {
                     walking = false;
-                    Invoke("fail", 2f);
+                    handler.restart();
+                    
                 }
             }            
             if (ray2.collider != null)
@@ -127,7 +129,7 @@ public class cat_walk : MonoBehaviour
                 if (ray2.collider.tag == "cat")
                 {
                     walking = false;
-                    Invoke("fail", 2f);
+                    handler.restart();
                 }
             }            
             if (ray3.collider != null)
@@ -137,7 +139,7 @@ public class cat_walk : MonoBehaviour
                 if (ray3.collider.tag == "cat")
                 {
                     walking = false;
-                    Invoke("fail", 2f);
+                    handler.restart();
                 }
             }            
             if (ray4.collider != null)
@@ -147,7 +149,7 @@ public class cat_walk : MonoBehaviour
                 if (ray4.collider.tag == "cat")
                 {
                     walking = false;
-                    Invoke("fail", 2f);
+                    handler.restart();
                 }
             }
             gameObject.layer = 0;
@@ -158,6 +160,7 @@ public class cat_walk : MonoBehaviour
         Debug.Log(gameObject);
         walking = false;
         index = 0;
+        Debug.Log(path.Length);
         transform.position = path[0];
     }
     public void catstay(Collider2D collision)
