@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2703970591669451662}
   - component: {fileID: 3193214106101250457}
   - component: {fileID: 713797237543025536}
+  - component: {fileID: -6359217324941955583}
   m_Layer: 0
   m_Name: cat
   m_TagString: cat
@@ -135,6 +136,7 @@ MonoBehaviour:
   walking: 0
   test: []
   path: []
+  newpath: []
 --- !u!58 &3193214106101250457
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -272,6 +274,33 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!50 &-6359217324941955583
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421600105919299211}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &6035413628333566378
 GameObject:
   m_ObjectHideFlags: 0

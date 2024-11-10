@@ -24,8 +24,8 @@ ScriptedImporter:
     _asset: {fileID: 8887337135552913928, guid: ff3125d5b14d2f2459a89aa1c08d2fee, type: 3}
   - _key: Cat
     _asset: {fileID: 1421600105919299211, guid: ee9db59c4b1e19743a4582341ba9ea8f, type: 3}
-  - _key: Player
-    _asset: {fileID: 6944984602186679334, guid: a8bd18e9cf00a9649b65d91b5a7f169c, type: 3}
+  - _key: Goal
+    _asset: {fileID: 7005133180528279025, guid: 920f5e0feeec55b4999a8b933d1b7037, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

@@ -99,6 +99,7 @@ public class cat_walk : MonoBehaviour
     }
     public void finish()
     {
+        handler.cat_done();
         //particle effect
     }
     private void FixedUpdate()
@@ -155,9 +156,9 @@ public class cat_walk : MonoBehaviour
     public void fail()
     {
         Debug.Log(gameObject);
-        transform.position = path[0];
         walking = false;
         index = 0;
+        transform.position = path[0];
     }
     public void catstay(Collider2D collision)
     {
