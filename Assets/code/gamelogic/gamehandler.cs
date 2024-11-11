@@ -71,6 +71,7 @@ public class gamehandler : MonoBehaviour
                     b.respawn();
                 }
             }
+            amount_done = 0;
         }
     }
 }
