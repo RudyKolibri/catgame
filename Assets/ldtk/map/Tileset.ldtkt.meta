@@ -99,7 +99,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: b98e490f82e078c44ba654d49e449e47
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
+      - {x: 8, y: 8}
     tessellationDetail: 0
   - name: Tileset_6
     originalName: 
@@ -155,7 +160,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 9f0fb74c283cc7145bf838a877cbeeb1
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
+      - {x: 8, y: 8}
     tessellationDetail: 0
   - name: Tileset_10
     originalName: 
