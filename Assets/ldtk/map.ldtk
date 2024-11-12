@@ -1376,7 +1376,15 @@
 							"px": [200,72],
 							"fieldInstances": [
 								{ "__identifier": "path", "__type": "Array<Point>", "__value": [], "__tile": null, "defUid": 8, "realEditorValues": [] },
-								{ "__identifier": "othercats", "__type": "Array<EntityRef>", "__value": [], "__tile": null, "defUid": 10, "realEditorValues": [] }
+								{ "__identifier": "othercats", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "7c6a89c0-9b00-11ef-a28a-bd5daa158b4f",
+									"layerIid": "9000d710-9b00-11ef-a28a-b9e4f43c48ac",
+									"levelIid": "900088f0-9b00-11ef-a28a-79e619a2c909",
+									"worldIid": "4cd76b80-73f0-11ef-8597-0d77d4a9f50f"
+								}], "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["7c6a89c0-9b00-11ef-a28a-bd5daa158b4f"]
+								}] }
 							],
 							"__worldX": 1016,
 							"__worldY": 72
@@ -1711,7 +1719,15 @@
 							"px": [72,200],
 							"fieldInstances": [
 								{ "__identifier": "path", "__type": "Array<Point>", "__value": [], "__tile": null, "defUid": 8, "realEditorValues": [] },
-								{ "__identifier": "othercats", "__type": "Array<EntityRef>", "__value": [], "__tile": null, "defUid": 10, "realEditorValues": [] }
+								{ "__identifier": "othercats", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "fb7c23e0-9b00-11ef-a28a-e9654830c7b2",
+									"layerIid": "88aef310-9b00-11ef-a28a-e5a8b175535f",
+									"levelIid": "88aecc00-9b00-11ef-a28a-a73b79e82748",
+									"worldIid": "4cd76b80-73f0-11ef-8597-0d77d4a9f50f"
+								}], "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["fb7c23e0-9b00-11ef-a28a-e9654830c7b2"]
+								}] }
 							],
 							"__worldX": 1160,
 							"__worldY": 200
@@ -2112,7 +2128,15 @@
 							"px": [200,200],
 							"fieldInstances": [
 								{ "__identifier": "path", "__type": "Array<Point>", "__value": [], "__tile": null, "defUid": 8, "realEditorValues": [] },
-								{ "__identifier": "othercats", "__type": "Array<EntityRef>", "__value": [], "__tile": null, "defUid": 10, "realEditorValues": [] }
+								{ "__identifier": "othercats", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "81166920-9b00-11ef-a28a-3315d5061ca7",
+									"layerIid": "4e872490-9b00-11ef-a28a-bb79b973b7c7",
+									"levelIid": "4e86fd80-9b00-11ef-a28a-79ced3f4452f",
+									"worldIid": "4cd76b80-73f0-11ef-8597-0d77d4a9f50f"
+								}], "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["81166920-9b00-11ef-a28a-3315d5061ca7"]
+								}] }
 							],
 							"__worldX": 1560,
 							"__worldY": 200
