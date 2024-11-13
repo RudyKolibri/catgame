@@ -12,6 +12,7 @@ public class cat_walk : MonoBehaviour
     LDtkFields data;
     gamehandler handler;
     int index = 0;
+    public GameObject box_fallen;
     Vector2 mouse_position_old;
     bool drawing = false;
     public bool walking = false;
@@ -76,8 +77,22 @@ public class cat_walk : MonoBehaviour
                         if (ray2.collider != null)
                         {
                             Debug.Log(ray2.collider);
-                            fail();
-                            handler.cat_done();
+                            if (ray2.collider.tag == "void")
+                            {
+                                Instantiate(box_fallen,ray2.collider.transform.position,ray2.collider.transform.rotation);
+                                ray.collider.gameObject.GetComponent<box>().respawn();
+                                ray.collider.gameObject.SetActive(false);
+                                Destroy(ray2.collider.gameObject);
+
+                                ray.collider.transform.position += ((Vector3)path[index] - (Vector3)transform.position);
+                                transform.position += ((Vector3)path[index] - (Vector3)transform.position);
+                                Invoke("step", 0.5f);
+                            }
+                            else
+                            {
+                                fail();
+                                handler.cat_done();
+                            }
                         }
                         else
                         {

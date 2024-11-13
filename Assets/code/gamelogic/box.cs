@@ -12,6 +12,7 @@ public class box : MonoBehaviour
 
     public void respawn()
     {
+        
         transform.position = restart;
     }
     

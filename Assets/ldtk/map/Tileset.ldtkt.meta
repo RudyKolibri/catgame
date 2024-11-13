@@ -71,7 +71,12 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 5eac70d94b0fa4b4aba1033c79beec89
-    spriteOutline: []
+    spriteOutline:
+    - shape:
+      - {x: -8, y: 8}
+      - {x: -8, y: -8}
+      - {x: 8, y: -8}
+      - {x: 8, y: 8}
     tessellationDetail: 0
   - name: Tileset_4
     originalName: 

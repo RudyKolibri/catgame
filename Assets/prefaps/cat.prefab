@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: -3309781605116015348, guid: 7e1a95c491cd2374e95752844d6ca35b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 129159551031618429be878c1d3d1df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  box_fallen: {fileID: 3903455010156938372, guid: 494f0ac7f40e87149b78d19409abe28c, type: 3}
   walking: 0
   test: []
   path: []

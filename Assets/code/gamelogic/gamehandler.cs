@@ -9,6 +9,7 @@ public class gamehandler : MonoBehaviour
     cat_walk[] cats;
     goal[] goals;
     box[] boxs;
+    boxfall[] boxesfall;
     private Camera _mainCamera;
     LDtkComponentLevel[] levels;
     public GameObject currentlevel;
@@ -21,11 +22,13 @@ public class gamehandler : MonoBehaviour
     }
     private void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             cats = FindObjectsOfType<cat_walk>();
             goals = FindObjectsOfType<goal>();
             boxs = FindObjectsOfType<box>();
+            boxesfall = FindObjectsOfType<boxfall>();
             foreach (cat_walk c in cats)
             {
                 c.fail();
@@ -34,9 +37,14 @@ public class gamehandler : MonoBehaviour
             }
             foreach (box b in boxs)
             {
+                b.gameObject.SetActive(true);
                 b.respawn();
             }
-            
+            foreach (boxfall d in boxesfall)
+            {
+                d.respawn();
+            }
+
         }
         foreach (LDtkComponentLevel c in levels)
         {
@@ -54,13 +62,20 @@ public class gamehandler : MonoBehaviour
         cats = FindObjectsOfType<cat_walk>();
         goals = FindObjectsOfType<goal>();
         boxs = FindObjectsOfType<box>();
+        boxesfall = FindObjectsOfType<boxfall>();
+        Debug.Log(GameObject.FindGameObjectsWithTag("boxfallen"));
         foreach (cat_walk c in cats)
         {
             c.fail();
         }
         foreach (box b in boxs)
         {
+            b.gameObject.SetActive(true);
             b.respawn();
+        }
+        foreach(boxfall d in boxesfall)
+        {
+            d.respawn();
         }
     }
     public void cat_done()
@@ -68,6 +83,7 @@ public class gamehandler : MonoBehaviour
         cats = FindObjectsOfType<cat_walk>();
         goals = FindObjectsOfType<goal>();
         boxs = FindObjectsOfType<box>();
+        boxesfall = FindObjectsOfType<boxfall>();
         amount_done++;
         if (amount_done == cats.Length) {
             bool done = true;
@@ -100,7 +116,12 @@ public class gamehandler : MonoBehaviour
                 }
                 foreach(box b in boxs)
                 {
+                    b.gameObject.SetActive(true);
                     b.respawn();
+                }
+                foreach (boxfall d in boxesfall)
+                {
+                    d.respawn();
                 }
             }
             amount_done = 0;
