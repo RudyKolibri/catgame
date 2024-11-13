@@ -469,11 +469,6 @@ TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -16692422589768320, guid: 128d55bbe75dcfb4086b4d72e8dbfe66, type: 3}
   m_PrefabInstance: {fileID: 62833722}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1006771691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1803784730005552192, guid: 128d55bbe75dcfb4086b4d72e8dbfe66, type: 3}
-  m_PrefabInstance: {fileID: 62833722}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2136345169
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,9 +573,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe478ce68ad64748961670ade08529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxesfall: []
-  currentlevel: {fileID: 1006771691}
+  currentlevel: {fileID: 2145675333}
   level: 0
+--- !u!1 &2145675333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5579451790482426833, guid: 128d55bbe75dcfb4086b4d72e8dbfe66, type: 3}
+  m_PrefabInstance: {fileID: 62833722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

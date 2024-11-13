@@ -51,7 +51,7 @@ public class cat_walk : MonoBehaviour
     public void start_movement() // will be called by a play button
     {
         walking= true;
-        Debug.Log("start");
+        
         Invoke("step", 0.5f);
     }
     public void step()
@@ -62,13 +62,13 @@ public class cat_walk : MonoBehaviour
             gameObject.layer = 2;
             if (index < path.Length)
             {
-                Debug.Log(index);
+                
                 RaycastHit2D ray = Physics2D.Raycast(transform.position, path[index] - (Vector2)transform.position, 1f);
                 
-                Debug.Log(path[index] - (Vector2)transform.position);
+                
                 if (ray.collider != null)
                 {
-                    Debug.Log(ray.collider);
+                    
                     if (ray.collider.tag == "box")
                     {
                         ray.collider.gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -76,12 +76,13 @@ public class cat_walk : MonoBehaviour
 
                         if (ray2.collider != null)
                         {
-                            Debug.Log(ray2.collider);
+                            
                             if (ray2.collider.tag == "void")
                             {
                                 Instantiate(box_fallen,ray2.collider.transform.position,ray2.collider.transform.rotation);
                                 ray.collider.gameObject.GetComponent<box>().respawn();
-                                ray.collider.gameObject.SetActive(false);
+                                ray.collider.GetComponent<BoxCollider2D>().enabled=false;
+                                ray.collider.gameObject.GetComponent<SpriteRenderer>().enabled=false;
                                 Destroy(ray2.collider.gameObject);
 
                                 ray.collider.transform.position += ((Vector3)path[index] - (Vector3)transform.position);
@@ -179,10 +180,10 @@ public class cat_walk : MonoBehaviour
     }
     public void fail()
     {
-        Debug.Log(gameObject);
+        
         walking = false;
         index = 0;
-        Debug.Log(path.Length);
+        
         transform.position = path[0];
     }
     public void catstay(Collider2D collision)
@@ -214,7 +215,7 @@ public class cat_walk : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Vector2 position = (_mainCamera.ScreenToWorldPoint(Input.mousePosition) / 16) * 16;
-            Debug.Log(mouse_position_old + " " + transform.position);
+            
             if (mouse_position_old != new Vector2(Mathf.Round(position.x + 0.5f) - 0.5f, MathF.Round(position.y + 0.5f) - 0.5f))
             {
                 Array.Resize(ref newpath, newpath.Length + 1);
@@ -235,7 +236,7 @@ public class cat_walk : MonoBehaviour
 
         if (Input.GetMouseButton(0) == false)
         {
-            Debug.Log(newpath);
+            
             if (newpath.Length > 0)
             {
                 path = newpath;

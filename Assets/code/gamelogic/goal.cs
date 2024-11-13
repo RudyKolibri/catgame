@@ -18,7 +18,7 @@ public class goal : MonoBehaviour
         if (collision.tag == "cat")
         {
             has_a_cat = true;
-            Debug.Log("cat");
+            
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

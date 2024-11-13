@@ -12,8 +12,10 @@ public class box : MonoBehaviour
 
     public void respawn()
     {
-        
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<BoxCollider2D>().enabled = true;
         transform.position = restart;
+        Debug.Log("test");
     }
     
 }

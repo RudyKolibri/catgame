@@ -37,7 +37,7 @@ public class gamehandler : MonoBehaviour
             }
             foreach (box b in boxs)
             {
-                b.gameObject.SetActive(true);
+                
                 b.respawn();
             }
             foreach (boxfall d in boxesfall)
@@ -70,7 +70,6 @@ public class gamehandler : MonoBehaviour
         }
         foreach (box b in boxs)
         {
-            b.gameObject.SetActive(true);
             b.respawn();
         }
         foreach(boxfall d in boxesfall)
@@ -91,7 +90,7 @@ public class gamehandler : MonoBehaviour
             {
                 if (i.has_a_cat == false)
                 {
-                    Debug.Log("fail");
+                    
                     done = false;
                 }
             }
@@ -104,7 +103,7 @@ public class gamehandler : MonoBehaviour
                     {
                         currentlevel = n.FindLevel().gameObject;
                         _mainCamera.gameObject.transform.position = new Vector3( n.FindLevel().gameObject.transform.position.x + (n.FindLevel().GetComponent<LDtkComponentLevel>().Size.x/2),_mainCamera.gameObject.transform.position.y,_mainCamera.transform.position.z );
-                        Debug.Log(currentlevel);
+                        
                     }
                 }
             }
@@ -116,7 +115,7 @@ public class gamehandler : MonoBehaviour
                 }
                 foreach(box b in boxs)
                 {
-                    b.gameObject.SetActive(true);
+                    
                     b.respawn();
                 }
                 foreach (boxfall d in boxesfall)
