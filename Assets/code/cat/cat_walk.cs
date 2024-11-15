@@ -206,21 +206,73 @@ public class cat_walk : MonoBehaviour
     public void new_path()
     {
         drawing = true;
+        walking = false ;
         Vector2[] newpath = {} ;
+        
         index = 0;
+        Vector2 position = (_mainCamera.ScreenToWorldPoint(Input.mousePosition) / 16) * 16;
+
+        mouse_position_old = transform.position;
     }
     public void drawing_path() {
         transform.position = path[0];
-        
-        if (Input.GetMouseButton(0))
+        if ((Vector2) transform.position != path[0])
+        {
+            drawing = false;
+            
+            walking = false;
+        }
+        else if (Input.GetMouseButton(0))
         {
             Vector2 position = (_mainCamera.ScreenToWorldPoint(Input.mousePosition) / 16) * 16;
-            
-            if (mouse_position_old != new Vector2(Mathf.Round(position.x + 0.5f) - 0.5f, MathF.Round(position.y + 0.5f) - 0.5f))
+            if (index == 0)
             {
                 Array.Resize(ref newpath, newpath.Length + 1);
-                newpath[index] = new Vector2(Mathf.Round(position.x + 0.5f) - 0.5f, MathF.Round(position.y + 0.5f) - 0.5f);
-                index ++;
+                newpath[0] = transform.position;
+                index++;
+                mouse_position_old = transform.position;
+            }
+            else if (mouse_position_old != new Vector2(Mathf.Round(position.x + 0.5f) - 0.5f, MathF.Round(position.y + 0.5f) - 0.5f))
+            {
+                Array.Resize(ref newpath, newpath.Length + 1);
+
+                if (mouse_position_old.x != Mathf.Round(position.x + 0.5f) - 0.5f)
+                {
+                    if (index == newpath.Length - 1)
+                    {
+                        if (mouse_position_old.x - (Mathf.Round(position.x + 0.5f) - 0.5f) < 0)
+                        {
+                            newpath[index] = new Vector2(mouse_position_old.x + 1, mouse_position_old.y);
+                            mouse_position_old = newpath[index];
+                            index++;
+                        }else {                        
+                            newpath[index] = new Vector2(mouse_position_old.x -1, mouse_position_old.y);
+                            mouse_position_old = newpath[index];
+                            index++;
+                        }
+                    }
+                }
+                else if (mouse_position_old.y != Mathf.Round(position.y + 0.5f) - 0.5f)
+                {
+                    if (index == newpath.Length - 1)
+                    {
+                        if (mouse_position_old.y - (Mathf.Round(position.y + 0.5f) - 0.5f) < 0)
+                        {
+                            newpath[index] = new Vector2(mouse_position_old.x, mouse_position_old.y + 1);
+                            mouse_position_old = newpath[index];
+                            index++;
+                            
+                        }else
+                        {
+                            newpath[index] = new Vector2(mouse_position_old.x, mouse_position_old.y - 1);
+                            mouse_position_old = newpath[index];
+                            index++;
+                            
+                        }
+                    }
+                }
+
+                
                 line = GetComponent<LineRenderer>();
                 line.positionCount = newpath.Length;
                 line.SetColors(new Color(0, 1, 0, 0.1f), new Color(0, 1, 0, 0.1f));
@@ -231,7 +283,7 @@ public class cat_walk : MonoBehaviour
                     line.SetPosition(index, new Vector3(newpath[index].x, newpath[index].y, -1));
                 }
             }
-            mouse_position_old =new Vector2(Mathf.Round(position.x + 0.5f) - 0.5f, MathF.Round(position.y + 0.5f) - 0.5f);
+            
         }
 
         if (Input.GetMouseButton(0) == false)
