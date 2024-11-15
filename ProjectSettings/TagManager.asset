@@ -8,6 +8,7 @@ TagManager:
   - box
   - void
   - boxfallen
+  - glass
   layers:
   - Default
   - TransparentFX

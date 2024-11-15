@@ -12,6 +12,7 @@ public class cat_walk : MonoBehaviour
     LDtkFields data;
     gamehandler handler;
     GameObject[] voids;
+    GameObject[] glasss;
     int index = 0;
     public GameObject box_fallen;
     Vector2 mouse_position_old;
@@ -132,9 +133,14 @@ public class cat_walk : MonoBehaviour
         foreach (LDtkReferenceToAnEntityInstance i in test) {
             gameObject.layer = 2;
             voids = GameObject.FindGameObjectsWithTag("void");
+            glasss = GameObject.FindGameObjectsWithTag("glass");
             foreach (GameObject v in voids)
             {
                 v.GetComponent<BoxCollider2D>().enabled = false;
+            }
+            foreach (GameObject g in glasss)
+            {
+                g.GetComponent<BoxCollider2D>().enabled = false;
             }
             RaycastHit2D ray1 = Physics2D.Raycast(transform.position, new Vector3(20, 0));
             RaycastHit2D ray2 = Physics2D.Raycast(transform.position, new Vector3(-20, 0));
@@ -184,6 +190,10 @@ public class cat_walk : MonoBehaviour
             foreach (GameObject v in voids)
             {
                 v.GetComponent<BoxCollider2D>().enabled = true;
+            }
+            foreach (GameObject g in glasss)
+            {
+                g.GetComponent<BoxCollider2D>().enabled = true;
             }
             gameObject.layer = 0;
         }
