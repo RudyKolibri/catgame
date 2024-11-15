@@ -2660,14 +2660,22 @@
 							"px": [72,200],
 							"fieldInstances": [
 								{ "__identifier": "path", "__type": "Array<Point>", "__value": [], "__tile": null, "defUid": 8, "realEditorValues": [] },
-								{ "__identifier": "othercats", "__type": "Array<EntityRef>", "__value": [], "__tile": null, "defUid": 10, "realEditorValues": [] }
+								{ "__identifier": "othercats", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "65c7a040-9b00-11ef-b1b9-4f904778581a",
+									"layerIid": "207e0be1-9b00-11ef-9e90-a338385f491c",
+									"levelIid": "207e0be0-9b00-11ef-9e90-a5458e6ddfbe",
+									"worldIid": "4cd76b80-73f0-11ef-8597-0d77d4a9f50f"
+								}], "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["65c7a040-9b00-11ef-b1b9-4f904778581a"]
+								}] }
 							],
 							"__worldX": 1704,
 							"__worldY": 200
 						},
 						{
 							"__identifier": "Goal",
-							"__grid": [4,3],
+							"__grid": [10,6],
 							"__pivot": [0.5,0.5],
 							"__tags": [],
 							"__tile": { "tilesetUid": 1, "x": 0, "y": 16, "w": 16, "h": 16 },
@@ -2676,10 +2684,53 @@
 							"width": 16,
 							"height": 16,
 							"defUid": 12,
-							"px": [72,56],
+							"px": [168,104],
 							"fieldInstances": [],
+							"__worldX": 1800,
+							"__worldY": 104
+						},
+						{
+							"__identifier": "Cat",
+							"__grid": [4,4],
+							"__pivot": [0.5,0.5],
+							"__tags": [],
+							"__tile": { "tilesetUid": 1, "x": 16, "y": 0, "w": 16, "h": 16 },
+							"__smartColor": "#D77643",
+							"iid": "65c7a040-9b00-11ef-b1b9-4f904778581a",
+							"width": 16,
+							"height": 16,
+							"defUid": 6,
+							"px": [72,72],
+							"fieldInstances": [
+								{ "__identifier": "path", "__type": "Array<Point>", "__value": [], "__tile": null, "defUid": 8, "realEditorValues": [] },
+								{ "__identifier": "othercats", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "207e0be2-9b00-11ef-9e90-55caf49a3700",
+									"layerIid": "207e0be1-9b00-11ef-9e90-a338385f491c",
+									"levelIid": "207e0be0-9b00-11ef-9e90-a5458e6ddfbe",
+									"worldIid": "4cd76b80-73f0-11ef-8597-0d77d4a9f50f"
+								}], "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["207e0be2-9b00-11ef-9e90-55caf49a3700"]
+								}] }
+							],
 							"__worldX": 1704,
-							"__worldY": 56
+							"__worldY": 72
+						},
+						{
+							"__identifier": "Goal",
+							"__grid": [10,9],
+							"__pivot": [0.5,0.5],
+							"__tags": [],
+							"__tile": { "tilesetUid": 1, "x": 0, "y": 16, "w": 16, "h": 16 },
+							"__smartColor": "#EAD4AA",
+							"iid": "6cce7c10-9b00-11ef-b1b9-d301abefa109",
+							"width": 16,
+							"height": 16,
+							"defUid": 12,
+							"px": [168,152],
+							"fieldInstances": [],
+							"__worldX": 1800,
+							"__worldY": 152
 						}
 					]
 				},
