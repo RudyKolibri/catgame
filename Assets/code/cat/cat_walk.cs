@@ -93,7 +93,7 @@ public class cat_walk : MonoBehaviour
                             {
                                 fail();
                                 handler.cat_done();
-                            }
+                            }//pipikaka
                         }
                         else
                         {
