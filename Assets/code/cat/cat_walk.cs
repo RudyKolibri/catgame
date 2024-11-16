@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 
 public class cat_walk : MonoBehaviour
 {
+    
     LDtkFields data;
     gamehandler handler;
     GameObject[] voids;
@@ -24,6 +25,7 @@ public class cat_walk : MonoBehaviour
     private Camera _mainCamera;
     public Vector2[] newpath;
     Transform cat;
+    
     private void Start()
     {
         
@@ -54,7 +56,7 @@ public class cat_walk : MonoBehaviour
     {
         walking= true;
         
-        Invoke("step", 0.5f);
+        Invoke("step", handler.catspeed);
     }
     public void step()
     {
@@ -89,11 +91,11 @@ public class cat_walk : MonoBehaviour
 
                                 ray.collider.transform.position += ((Vector3)path[index] - (Vector3)transform.position);
                                 transform.position += ((Vector3)path[index] - (Vector3)transform.position);
-                                Invoke("step", 0.5f);
+                                Invoke("step", handler.catspeed);
                             }
                             else
                             {
-                                fail();
+                                Invoke("fail",handler.catspeed);
                                 handler.cat_done();
                             }//pipikaka
                         }
@@ -101,20 +103,20 @@ public class cat_walk : MonoBehaviour
                         {
                             ray.collider.transform.position += ((Vector3)path[index] - (Vector3)transform.position);
                             transform.position += ((Vector3)path[index] - (Vector3)transform.position);
-                            Invoke("step", 0.5f);
+                            Invoke("step", handler.catspeed);
                         }
                         ray.collider.gameObject.GetComponent<BoxCollider2D>().enabled = true;
                     }
                     else
                     {
-                        fail();
+                        Invoke("fail", handler.catspeed);
                         handler.cat_done();
                     }
                 }
                 else
                 {
                     transform.position += ((Vector3)path[index] - (Vector3)transform.position);
-                    Invoke("step", 0.5f);
+                    Invoke("step", handler.catspeed);
                 }
             }
             else
@@ -217,7 +219,7 @@ public class cat_walk : MonoBehaviour
                 if (ray.collider.tag == "cat")
                 {
                     walking = false;
-                    Invoke("fail", 2f);
+                    Invoke("fail", handler.catspeed);
                 }
             }
             gameObject.layer = 0;
