@@ -470,13 +470,13 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 16
+    height: 9
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 13
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -520,8 +520,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 16
-  m_RefResolutionX: 384
-  m_RefResolutionY: 216
+  m_RefResolutionX: 484
+  m_RefResolutionY: 272
   m_UpscaleRT: 1
   m_PixelSnapping: 1
   m_CropFrameX: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2136345173}
         m_TargetAssemblyTypeName: gamehandler, Assembly-CSharp
-        m_MethodName: playbuttonclick
+        m_MethodName: changespeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1010255394613501995, guid: 7e1a95c491cd2374e95752844d6ca35b, type: 3}
+  m_Sprite: {fileID: 4938342473259674171, guid: 7e1a95c491cd2374e95752844d6ca35b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1019,6 +1019,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe478ce68ad64748961670ade08529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed1: {fileID: 4938342473259674171, guid: 7e1a95c491cd2374e95752844d6ca35b, type: 3}
+  speed2: {fileID: 2167505942708378944, guid: 7e1a95c491cd2374e95752844d6ca35b, type: 3}
+  speed3: {fileID: -1010255394613501995, guid: 7e1a95c491cd2374e95752844d6ca35b, type: 3}
+  button: {fileID: 748949013}
+  catspeed: 0.5
   currentlevel: {fileID: 2145675333}
   level: 0
 --- !u!1 &2145675333 stripped

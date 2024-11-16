@@ -26,6 +26,7 @@ public class gamehandler : MonoBehaviour
     {
         _mainCamera = Camera.main;
         levels = FindObjectsOfType<LDtkComponentLevel>();
+        Screen.SetResolution(1920, 1080, true);
     }
     public void changespeed()
     {
