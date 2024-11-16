@@ -13,6 +13,7 @@ public class cat_walk : MonoBehaviour
     LDtkFields data;
     gamehandler handler;
     GameObject[] voids;
+    AudioSource move;
     GameObject[] glasss;
     int index = 0;
     public GameObject box_fallen;
@@ -28,7 +29,7 @@ public class cat_walk : MonoBehaviour
     
     private void Start()
     {
-        
+        move = GetComponent<AudioSource>();
         handler = FindObjectOfType<gamehandler>();
         _mainCamera = Camera.main;
         data = GetComponent<LDtkFields>();
@@ -60,6 +61,7 @@ public class cat_walk : MonoBehaviour
     }
     public void step()
     {
+        move.Play();
         if (walking != false)
         {
             index += 1;

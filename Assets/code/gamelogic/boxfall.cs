@@ -6,9 +6,11 @@ public class boxfall : MonoBehaviour
 {
     public GameObject void_tile;
     Vector2 restart;
+    
     private void Start()
     {
         restart = transform.position;
+        
     }
     public void respawn()
     {

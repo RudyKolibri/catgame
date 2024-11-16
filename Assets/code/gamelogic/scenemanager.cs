@@ -7,6 +7,10 @@ public class scenemanager : MonoBehaviour
 {
     public void play()
     {
+        Invoke("scenedelay", 0.05f);
+    }
+    private void scenedelay()
+    {
         SceneManager.LoadScene("gameplay");
     }
 }
