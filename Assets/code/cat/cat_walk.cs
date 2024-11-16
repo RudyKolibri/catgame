@@ -84,9 +84,8 @@ public class cat_walk : MonoBehaviour
                             if (ray2.collider.tag == "void")
                             {
                                 Instantiate(box_fallen,ray2.collider.transform.position,ray2.collider.transform.rotation);
-                                ray.collider.gameObject.GetComponent<box>().respawn();
-                                ray.collider.GetComponent<BoxCollider2D>().enabled=false;
-                                ray.collider.gameObject.GetComponent<SpriteRenderer>().enabled=false;
+                                ray.collider.gameObject.GetComponent<box>().voided();
+                                
                                 Destroy(ray2.collider.gameObject);
 
                                 ray.collider.transform.position += ((Vector3)path[index] - (Vector3)transform.position);
