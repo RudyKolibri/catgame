@@ -20,7 +20,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 0
-      y: 48
+      y: 64
       width: 16
       height: 16
     spriteID: a7c428efdaddc0a46b88cd726a8c9886
@@ -34,7 +34,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 16
-      y: 48
+      y: 64
       width: 16
       height: 16
     spriteID: 216cdc485cac77e4ea1429d250a0cfe5
@@ -48,7 +48,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 32
-      y: 48
+      y: 64
       width: 16
       height: 16
     spriteID: 6d8d4e7ca3a06ea4bb949029d43a2749
@@ -67,7 +67,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 48
-      y: 48
+      y: 64
       width: 16
       height: 16
     spriteID: 5eac70d94b0fa4b4aba1033c79beec89
@@ -86,7 +86,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 0
-      y: 32
+      y: 48
       width: 16
       height: 16
     spriteID: 80d7b221d0821654a9199ab325f4e16e
@@ -100,7 +100,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 16
-      y: 32
+      y: 48
       width: 16
       height: 16
     spriteID: b98e490f82e078c44ba654d49e449e47
@@ -119,7 +119,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 32
-      y: 32
+      y: 48
       width: 16
       height: 16
     spriteID: 13b6946c55de0ff4597eb30538b13911
@@ -133,7 +133,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 48
-      y: 32
+      y: 48
       width: 16
       height: 16
     spriteID: cb2ba6700d3704c4bb13ce5582a18da1
@@ -147,7 +147,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 0
-      y: 16
+      y: 32
       width: 16
       height: 16
     spriteID: c4ce22c788a502e4e9b437976104b315
@@ -161,7 +161,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 16
-      y: 16
+      y: 32
       width: 16
       height: 16
     spriteID: 9f0fb74c283cc7145bf838a877cbeeb1
@@ -180,7 +180,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 32
-      y: 16
+      y: 32
       width: 16
       height: 16
     spriteID: 247ca5337dbff4d4da29be975ef871f7
@@ -194,7 +194,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 48
-      y: 16
+      y: 32
       width: 16
       height: 16
     spriteID: ae0a8e3659c79d14aaf3c76d245084d0
@@ -208,7 +208,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 16
       width: 16
       height: 16
     spriteID: 5a0c241dd80752a4e9779bdb9e4f2abc
@@ -222,7 +222,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 16
-      y: 0
+      y: 16
       width: 16
       height: 16
     spriteID: fad6ce8ec44bbc1409bce355c2216e2f
@@ -236,7 +236,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 32
-      y: 0
+      y: 16
       width: 16
       height: 16
     spriteID: 3b388d7f49ac41d4b91b5acd23401297
@@ -250,11 +250,67 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 48
-      y: 0
+      y: 16
       width: 16
       height: 16
     spriteID: 3d967c1b4dfec8c41b1ba04b9a7445dd
     spriteOutline: []
     tessellationDetail: 0
+  - name: Tileset_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 97cfbadb2a3f94c42ba1da7458c3f260
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tileset_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: a00787a46d3f45c46b683c4783a0d67f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tileset_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 222a14865d44d9b49af2d99896b017b7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tileset_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 83a17e469008d574e835b8ea3c4a658a
+    spriteOutline: []
+    tessellationDetail: 0
   _secondaryTextures: []
-  _artifacts: {fileID: -2988177865379244337, guid: 7e1a95c491cd2374e95752844d6ca35b, type: 3}
+  _artifacts: {instanceID: 0}

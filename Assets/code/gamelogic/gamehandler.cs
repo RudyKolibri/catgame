@@ -133,6 +133,10 @@ public class gamehandler : MonoBehaviour
                         
                     }
                 }
+                foreach (boxfall b in boxesfall)
+                {
+                    Destroy(b.gameObject);
+                }
             }
             else
             {

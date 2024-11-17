@@ -32,11 +32,11 @@
     }
   ],
   "Def": {
-    "__cHei": 4,
+    "__cHei": 5,
     "__cWid": 4,
     "cachedPixelData": {
-      "opaqueTiles": "1011011111100000",
-      "averageColors": "fa65a78af08af335989afb64fda7feb9fb65f779fcddcca92a87cb99cb98cca9"
+      "opaqueTiles": "10110111111000000000",
+      "averageColors": "fa65a78af08af335989afb64fda7feb9fb65f779fcddcca90000cb99cb98cca92a87cca9cca90000"
     },
     "customData": [
 
@@ -47,7 +47,7 @@
     ],
     "identifier": "Tileset",
     "padding": 0,
-    "pxHei": 64,
+    "pxHei": 80,
     "pxWid": 64,
     "relPath": "katspel.png",
     "savedSelections": [

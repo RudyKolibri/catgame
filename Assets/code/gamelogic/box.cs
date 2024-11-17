@@ -5,9 +5,13 @@ using UnityEngine;
 public class box : MonoBehaviour
 {
     Vector2 restart;
+    
+    
+    
     void Start()
     {
         restart = transform.position;
+        
     }
 
     public void respawn()
@@ -19,6 +23,7 @@ public class box : MonoBehaviour
         Debug.Log("test");
     }public void voided()
     {
+        
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Rigidbody2D>().simulated = false;
         transform.position = restart;
