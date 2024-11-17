@@ -23,7 +23,7 @@ public class musicplayer : MonoBehaviour
             loopmainmenu.Play();
             
         }
-        if (introgameplay.time >= 15.5f && loopgameplay.isPlaying == false)
+        if (introgameplay.time >= 49.5f && loopgameplay.isPlaying == false)
         {
 
             loopgameplay.Play();
