@@ -11,6 +11,8 @@ public class musicplayer : MonoBehaviour
     public AudioSource loopgameplay;
     
     public float offset;
+    bool gameplay_looping = false;
+    bool intro_looping = false;
     private void Start()
     {
         DontDestroyOnLoad(this);
@@ -21,12 +23,26 @@ public class musicplayer : MonoBehaviour
         {
             
             loopmainmenu.Play();
+            intro_looping = true;
+            
+        }if (loopmainmenu.time >= 191.5f && intro_looping)
+        {
+            loopmainmenu.time = 0;
+            loopmainmenu.Play();
             
         }
+        
         if (introgameplay.time >= 49.5f && loopgameplay.isPlaying == false)
         {
 
             loopgameplay.Play();
+            gameplay_looping=true;
+        }
+        if (loopgameplay.time >= 169.5f && gameplay_looping)
+        {
+            loopgameplay.time = 0;
+            loopgameplay.Play();
+            
 
         }
     }
@@ -40,5 +56,7 @@ public class musicplayer : MonoBehaviour
         loopmainmenu.Pause();
         intromainmenu.Pause();
         introgameplay.Play();
+        gameplay_looping = false ;
+        intro_looping=false ;
     }
 }
